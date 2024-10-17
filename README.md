@@ -1,210 +1,85 @@
-![CredPago](http://cp-arquivos-publicos.s3-website-sa-east-1.amazonaws.com/imagens/credpago.png)
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-# Desafio Backend
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-Este desafio consiste em criar uma API REST para um marketplace de Discos que será consumida por um aplicativo mobile e uma aplicação web.
-Todos os itens serão colocados em um carrinho de compras e passados para a API para realizar uma transação e-commerce.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-Faça o **fork** neste repositório e quando concluir o desafio faça um **pull request** para iniciar a nossa análise.
+## Description
 
-Escolha a tecnologia que achar melhor, contudo, deverá informar quais tecnologias foram usadas, como instalar, rodar e efetuar os acessos no arquivo para análise do desafio.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-### POST `/store/api/v1/product`
-Esse método deve receber um item novo e persistir no banco de dados.
-```json
-{
-   "product_id":"d2eda25e-9757-11e9-bc42-526af7764f64",
-   "artist":"Pink Floyd",
-   "year":1973,
-   "album":"Dask Side of The Moon",
-   "price":250,
-   "store":"Minha Loja de Discos",
-   "thumb":"https://images-na.ssl-images-amazon.com/images/I/61R7gJadP7L._SX355_.jpg",
-   "date":"26/11/2018"
-}
-```
-+ Product
-  
-| Campo       | Tipo    |
-|-------------|---------|
-| product_id  | String  |
-| artist      | String  |
-| year        | Integer |
-| album       | String  |
-| price       | Integer |
-| store       | String  |
-| thumb       | String  |
-| date        | String  |
+## Project setup
 
-### GET `/store/api/v1/products`
-Retornar uma lista de produtos no seguinte formato JSON
-```json
-[
-  {
-    "product_id":"d2eda25e-9757-11e9-bc42-526af7764f64",
-    "artist":"Pink Floyd",
-    "year":1973,
-    "album":"Dask Side of The Moon",
-    "price":250,
-    "store":"Minha Loja de Discos",
-    "thumb":"https://images-na.ssl-images-amazon.com/images/I/61R7gJadP7L._SX355_.jpg",
-    "date":"26/11/2018"
-  },
-  {
-    "product_id":"4a149a9a-9758-11e9-bc42-526af7764f64",
-    "artist":"U2",
-    "year":1993,
-    "album":"Zooropa",
-    "price":100,
-    "store":"Super Discos",
-    "thumb":"https://images-na.ssl-images-amazon.com/images/I/81ZmhD2lO8L._SL1200_.jpg",
-    "date":"01/02/2019"
-  },
-  {
-    "product_id":"53f2b33a-9758-11e9-bc42-526af7764f64",
-    "artist":"The Beatles",
-    "year":1969,
-    "album":"Abbey Road",
-    "price":180,
-    "store":"Old School Discos",
-    "thumb":"https://images-na.ssl-images-amazon.com/images/I/919WO8q-nnL._SL1500_.jpg",
-    "date":"13/06/2019"
-  }
-]
+```bash
+$ npm install
 ```
 
-+ Product
-  
-| Campo       | Tipo    |
-|-------------|---------|
-| product_id  | String  |
-| artist      | String  |
-| year        | Integer |
-| album       | String  |
-| price       | Integer |
-| store       | String  |
-| thumb       | String  |
-| date        | String  |
+## Compile and run the project
 
-### POST `/store/api/v1/add_to_cart`
-Adicionar item ao carrinho.
-```json
-{
-   "cart_id":"c5b6c552-9757-11e9-bc42-526af7764f64",
-   "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-   "product_id":"d2eda25e-9757-11e9-bc42-526af7764f64",
-   "date":"26/11/2018"
-   "time":"18:33:12"
-}
-```
-+ Cart
-  
-| Campo       | Tipo    |
-|-------------|---------|
-| cart_id     | String  |
-| client_id   | Integer |
-| product_id  | String  |
-| date        | String  |
-| time        | String  |
+```bash
+# development
+$ npm run start
 
-Após o cliente incluir todos itens no carrinho, a compra será finalizada, invocando o método `buy` na sua API.
+# watch mode
+$ npm run start:dev
 
-### POST `/store/api/v1/buy`
-Finalizar a compra.
-```json
-{
-   "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-   "cart_id":"c5b6c552-9757-11e9-bc42-526af7764f64",
-   "client_name":"John Snow",
-   "value_to_pay":280,
-   "credit_card":{
-      "number":"1234123412341234",
-      "cvv":111,
-      "exp_date":"06/22",
-      "card_holder_name":"John S",
-   }
-}
+# production mode
+$ npm run start:prod
 ```
 
-+ Transaction
+## Run tests
 
-| Campo        | Tipo       |
-|--------------|------------|
-| client_id    | String     |
-| client_name  | String     |
-| total_to_pay | Integer    |
-| credit_card  | CreditCard |
+```bash
+# unit tests
+$ npm run test
 
-+ CreditCard
+# e2e tests
+$ npm run test:e2e
 
-| Campo            | Tipo    |
-|------------------|---------|
-| card_number      | String  |
-| card_holder_name | String  |
-| cvv              | Integer |
-| exp_date         | String  |
-
-
-### GET `/store/api/v1/history`
-Esse método deve retornar todos as compras realizadas na API
-```json
-[
-   {
-      "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-      "order_id":"569c30dc-6bdb-407a-b18b-3794f9b206a1",
-      "card_number":"**** **** **** 1234",
-      "value":100,
-      "date":"21/08/2018"
-   },
-   {
-      "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-      "order_id":"569c30dc-6bdb-407a-b18b-3794f9b206a2",
-      "card_number":"**** **** **** 1234",
-      "value":280,
-      "date":"20/02/2019"
-   },
-   {
-      "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-      "order_id":"569c30dc-6bdb-407a-b18b-3794f9b206aa",
-      "card_number":"**** **** **** 1234",
-      "value":500,
-      "date":"29/06/2019"
-   }
-]
+# test coverage
+$ npm run test:cov
 ```
 
-+ History
+## Resources
 
-| Campo            | Tipo    |
-|------------------|---------|
-| card_number      | String  |
-| cliend_id        | String  |
-| value            | Integer |
-| order_id         | String  |
+Check out a few resources that may come in handy when working with NestJS:
 
-### GET `/store/api/v1/history/{clientId}`
-Chamada da API deve retornar todos as compras realizadas por um cliente específico
-```json
-[
-   {
-      "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-      "order_id":"569c30dc-6bdb-407a-b18b-3794f9b206a1",
-      "value":180,
-      "date":"19/01/2019",
-      "card_number":"**** **** **** 1234"
-   },
-   {
-      "client_id":"fac3591c-9785-11e9-bc42-526af7764f64",
-      "order_id":"569c30dc-6bdb-407a-b18b-3794f9b206a2",
-      "value":100,
-      "date":"20/06/2019",
-      "card_number":"**** **** **** 1234"
-   }
-]
-```
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-### Premissas
-- A solução deve ser escalável, preparada para receber um grande volume de requisições;
-- Os endpoints do serviço devem responder num tempo satisfatório, que não comprometa a experiência dos usuários, mesmo com um grande volume de dados;
-- O desenvolvimento pode ser feito utilizando qualquer linguagem de programação e qualquer sistema de banco de dados, cabendo ao desenvolvedor escolher o que for melhor para a situação;
-- Serão avaliados a arquitetura, os padrões utilizados para o desenvolvimento, documentação, arquitetura da solução e a entrega no prazo;
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).

@@ -1,12 +1,15 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
+import { ConfigService } from "@nestjs/config";
 
-export const dataBaseConfig: TypeOrmModuleOptions = {
-    type: 'mysql',
-    host: 'host',
-    port: 3306,
-    username: 'user',
-    password: 'password',
-    database: 'data-base-name',
-    entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-    synchronize: false,
+export async function dataBaseConfig(configService: ConfigService): Promise<TypeOrmModuleOptions> {
+    return {
+        type: 'mysql',
+        host: configService.get<string>('DB_HOST'),
+        port: configService.get<number>('DB_PORT'),
+        username: configService.get<string>('DB_USER'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_NAME'),
+        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        synchronize: false,
+    }
 }

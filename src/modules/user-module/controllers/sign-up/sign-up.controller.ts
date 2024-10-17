@@ -10,7 +10,7 @@ export class SignUpController {
     ) { }
 
     @Post('/sign-up')
-    signUp(@Body() body: newUserDto, @Res() res: Response) {
+    signUp(@Body() body: newUserDto, @Res() res: Response): Promise<Response> {
         return this.sign_up_service.signUp(body, res);
     }
 }

@@ -2,9 +2,6 @@ import { IsNumber, IsString } from "class-validator";
 
 export class newProductDto {
     @IsString()
-    product_id: string;
-
-    @IsString()
     artist: string;
 
     @IsNumber()
@@ -21,7 +18,4 @@ export class newProductDto {
 
     @IsString()
     thumb: string;
-
-    @IsString()
-    date: string;
 }
